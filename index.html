@@ -1,82 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaşasın Cumhuriyet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
+
 <body>
-    <div class="container py-5">
+    <div class="container">
 
         <!-- Title and Description -->
-        <h1 class="text-center mb-4">100. Yıl! Yaşasın Cumhuriyet</h1>
-        <p class="text-center mb-5">Türkiye Cumhuriyeti bu yıl 100. yaşına girecek. Siz de bu özel dönem için özel bir profil resmi oluşturabilirsiniz. Kullanmak istediğiniz profil resmini seçin ve sizin için bu özel 100. yıl çerçevesinin içine yerleştirelim. Daha sonra bu görseli aşağıda yer alan Resmi İndir tuşuna basarak indirip kullanabilirsiniz.</p>
+        <h1>Türkiye Cumhuriyeti 100 Yaşında!</h1>
+        <p>Türkiye Cumhuriyeti bu yıl 100. yaşına girecek. Siz de bu özel dönem için özel bir profil resmi oluşturabilirsiniz. Kullanmak istediğiniz profil resmini seçin ve sizin için bu özel 100. yıl çerçevesinin içine yerleştirelim. Daha sonra bu görseli aşağıda yer alan Resmi İndir tuşuna basarak indirip kullanabilirsiniz.</p>
 
         <!-- Image Upload and Display Section -->
-        <div class="mb-5 text-center">
-            <input type="file" id="imageUpload" accept="image/*" class="mb-3">
-            <canvas id="canvas" class="border border-secondary"></canvas>
-            <button id="downloadBtn" class="btn btn-primary mt-3">Resmi İndir</button>
+<!-- Image Upload and Display Section -->
+<div class="image-section">
+    <div class="image-preview">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="buttons">
+        <!-- Wrapped input in a div and added a span to act as the styled button -->
+        <div class="file-wrapper">
+            <input type="file" id="imageUpload" accept="image/*">
+            <span>Resim Yükle</span>
         </div>
+        <button id="downloadBtn">Resmi İndir</button>
+    </div>
+    
+</div>
 
-        <!-- Testimonials Section -->
-        <h2 class="text-center mb-4">Alıntılar</h2>
-        <div class="row mb-5">
 
- 
-
-            <div class="col-md-1">
-            </div>
-            <!-- ... Add more images as needed -->
-
-            <div class="col-md-10">
-                <blockquote class="blockquote">
-                    <p>"  Benim naçiz vücudum elbet bir gün toprak olacaktır, ancak Türkiye Cumhuriyeti ilelebet payidar kalacaktır."
-                    </p>
-                    <footer class="blockquote-footer">Mustafa Kemal Atatürk</footer>
-                </blockquote>
-            </div>
-            <!-- ... Add more images as needed -->
-
-          
-
-        </div>
+        <!-- Quotes Section -->
+      
+        <blockquote>
+            <p>"Benim naçiz vücudum elbet bir gün toprak olacaktır, ancak Türkiye Cumhuriyeti ilelebet payidar kalacaktır."</p>
+            <footer>Mustafa Kemal Atatürk</footer>
+        </blockquote>
 
         <!-- Images Section -->
-        <h2 class="text-center mb-4">100. Yıl Resimleri</h2>
-        <div class="row mb-5">
-            <!-- Sample Image -->
-            <div class="col-md-4">
-                <img src="/images/1.png" alt="Republic Image" class="img-fluid rounded mb-3">
-            </div>
-            <!-- ... Add more images as needed -->
-
-            <div class="col-md-4">
-                <img src="/images/4.png" alt="Republic Image" class="img-fluid rounded mb-3">
-            </div>
-
-            <div class="col-md-4">
-                <img src="/images/2.png" alt="Republic Image" class="img-fluid rounded mb-3">
-            </div>
-                        <!-- ... Add more images as needed -->
-      
-
+        <h2>100. Yıl Resimleri</h2>
+        <div class="image-gallery">
+            <img src="/images/1.png" alt="Republic Image">
+            <img src="/images/4.png" alt="Republic Image">
+            <img src="/images/2.png" alt="Republic Image">
         </div>
 
         <!-- Credits Section -->
-        <h2 class="text-center mb-4">Teşekkürler</h2>
-        <p class="text-center">Vatanı için çalışan ve her türlü kahramanlığı yapan kahramanlarımıza teşekkürler. Saygı ve minnetle ...</p>
+        <h2>Teşekkürler</h2>
+        <p>Vatanı için çalışan ve her türlü kahramanlığı yapan kahramanlarımıza teşekkürler. Saygı ve minnetle ...</p>
 
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2023, Hüseyin Demirtaş</p>
+    <footer>
+        <p>&copy; <a href="https://github.com/dilsayar/cumhuriyet" target="_blank">Hüseyin Demirtaş</a></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

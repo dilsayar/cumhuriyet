@@ -1,17 +1,139 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
 }
 
 .container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+blockquote {
+    padding: 20px;
+    border-left: 5px solid #333;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+blockquote footer {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.image-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.image-preview {
+    flex: 0 0 60%;
+    text-align: center;
 }
 
 canvas {
-    max-width: 100%;
     display: block;
-    margin: 0 auto;
+    max-width: 50%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+.buttons {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px; /* Spacing between the input and button */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.image-gallery img {
+    max-width: 32%;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Styling for the file input button */
+.file-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+#imageUpload {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-wrapper span {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.file-wrapper span:hover {
+    background-color: #555;
+    cursor: pointer;
 }

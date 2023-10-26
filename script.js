@@ -43,7 +43,7 @@ imageUpload.addEventListener('change', function() {
 
 document.getElementById('downloadBtn').addEventListener('click', function() {
     const link = document.createElement('a');
-    link.download = 'framed_image.png';
+    link.download = 'turkiye_cumhuriyeti.png';
     link.href = canvas.toDataURL();
     link.click();
 });

@@ -6,7 +6,9 @@ canvas.width = 900;
 canvas.height = 900;
 
 const frameImage = new Image();
-frameImage.src = '/square.png'; 
+frameImage.src = '/images/square.png'; 
+
+
 
 frameImage.onload = function() {
     ctx.drawImage(frameImage, 0, 0, 900, 900); // Draw the frame with 900x900 dimensions
@@ -18,11 +20,11 @@ function drawCircularImage(img) {
     const yOffset = (img.height - size) / 2;
     
     ctx.beginPath();
-    ctx.arc(450, 450, 300, 0, Math.PI * 2, true);  // Create a circular clipping region
+    ctx.arc(450, 450, 250, 0, Math.PI * 2, true);  // Adjust the radius to 250
     ctx.closePath();
     ctx.clip();
 
-    ctx.drawImage(img, xOffset, yOffset, size, size, 150, 150, 600, 600); // Draw the image within the clipping region
+    ctx.drawImage(img, xOffset, yOffset, size, size, 200, 200, 500, 500); // Adjust to draw the image as 500x500
 }
 
 imageUpload.addEventListener('change', function() {

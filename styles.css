@@ -1,11 +1,17 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 50px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 }
 
 canvas {
-    border: 1px solid #ddd;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }

@@ -6,40 +6,75 @@ canvas.width = 900;
 canvas.height = 900;
 
 const frameImage = new Image();
-frameImage.src = '/images/square.png'; 
+frameImage.src = '/images/t1.png'; 
 
+const frameDropdown = document.getElementById('frame-dropdown');
 
-
-frameImage.onload = function() {
-    ctx.drawImage(frameImage, 0, 0, 900, 900); // Draw the frame with 900x900 dimensions
+function drawFrame() {
+    ctx.drawImage(frameImage, 0, 0, 900, 900);
 }
 
+// Initial frame draw when the page loads
+drawFrame();
+
+frameDropdown.addEventListener('change', function() {
+    const selectedTheme = frameDropdown.value;
+    frameImage.src = `/images/${selectedTheme}.png`;
+
+    frameImage.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+        
+        if (imageUpload.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const userImg = new Image();
+                userImg.src = event.target.result;
+                userImg.onload = function() {
+                    drawUserImage(userImg);
+                }
+            }
+            reader.readAsDataURL(imageUpload.files[0]);
+        } else {
+            drawFrame(); // Draw only the frame if no user image is uploaded
+        }
+    }
+});
+
 function drawCircularImage(img) {
+    ctx.save();  // Save the current canvas state
+
     const size = Math.min(img.width, img.height);
     const xOffset = (img.width - size) / 2;
     const yOffset = (img.height - size) / 2;
     
     ctx.beginPath();
-    ctx.arc(450, 450, 250, 0, Math.PI * 2, true);  // Adjust the radius to 250
+    ctx.arc(450, 450, 250, 0, Math.PI * 2, true);  
     ctx.closePath();
     ctx.clip();
 
-    ctx.drawImage(img, xOffset, yOffset, size, size, 200, 200, 500, 500); // Adjust to draw the image as 500x500
+    ctx.drawImage(img, xOffset, yOffset, size, size, 200, 200, 500, 500);
+
+    ctx.restore();  // Restore the canvas state to what it was before clipping
 }
 
 imageUpload.addEventListener('change', function() {
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const img = new Image();
-        img.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
-            ctx.drawImage(frameImage, 0, 0, 900, 900);        // Redraw the frame
-            drawCircularImage(img);                            // Crop and draw the user's image in circular form
+    if (imageUpload.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = function() {
+                drawUserImage(img);
+            }
         }
-        img.src = event.target.result;
+        reader.readAsDataURL(imageUpload.files[0]);
     }
-    reader.readAsDataURL(imageUpload.files[0]);
 });
+
+function drawUserImage(img) {
+    drawFrame();  // Draw the frame first
+    drawCircularImage(img); // Then draw the user's image
+}
 
 document.getElementById('downloadBtn').addEventListener('click', function() {
     const link = document.createElement('a');

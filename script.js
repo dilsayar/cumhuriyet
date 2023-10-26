@@ -6,7 +6,7 @@ canvas.width = 900;
 canvas.height = 900;
 
 const frameImage = new Image();
-frameImage.src = '/images/t1.png'; 
+
 
 const frameDropdown = document.getElementById('frame-dropdown');
 
@@ -14,8 +14,11 @@ function drawFrame() {
     ctx.drawImage(frameImage, 0, 0, 900, 900);
 }
 
-// Initial frame draw when the page loads
-drawFrame();
+frameImage.onload = function() {
+    drawFrame(); // Draw the frame once it's loaded
+}
+frameImage.src = '/images/t1.png';
+
 
 frameDropdown.addEventListener('change', function() {
     const selectedTheme = frameDropdown.value;

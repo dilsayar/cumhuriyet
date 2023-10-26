@@ -104,12 +104,39 @@ canvas {
 
 .buttons {
     flex: 0 0 20%;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: stretch; /* Change this from 'start' to 'stretch' to make buttons and inputs span the full width */
     gap: 20px; /* Spacing between the input and button */
+    padding: 10px; /* Add some padding for better look */
+    border: 1px solid #ccc; /* A subtle border around buttons container */
+    border-radius: 5px; /* Rounded corners for the container */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
 }
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .image-section {
+        flex-direction: column;
+    }
+
+    .image-preview {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .buttons label, .buttons select, .buttons input, .buttons button {
+        flex: 0 0 48%; /* Make each element take roughly half the width with a little gap in between */
+    }
+}
+
 
 button {
     padding: 10px 20px;

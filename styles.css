@@ -1,12 +1,29 @@
+/* Theme selection styling */
+.theme-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.theme-selection select {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+/* Classic theme */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    margin-top: 30px;
 }
 
 .container {
     max-width: 1200px;
+    border-radius: 10px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -15,15 +32,44 @@ body {
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
 }
+
+h1::before, h1::after, h2::before, h2::after {
+    content: "";
+    flex: 1;
+    height: 2px; /* Adjust the height as needed */
+    background-color: #333; /* Color of the separator line */
+    margin: 0 20px; /* Spacing between the text and the separator */
+}
+
+h1::before, h2::before {
+    margin-right: 20px;
+}
+
+h1::after, h2::after {
+    margin-left: 20px;
+}
+
+
+
 
 p {
     margin-bottom: 20px;
     line-height: 1.6;
+    font-size: 1.3rem;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 blockquote {
     padding: 20px;
+    border-radius: 5px;
     border-left: 5px solid #333;
     margin: 20px 0;
     font-style: italic;
@@ -31,6 +77,7 @@ blockquote {
 
 blockquote footer {
     display: block;
+    border-radius: 5px;
     text-align: right;
     margin-top: 10px;
 }
@@ -43,19 +90,21 @@ blockquote footer {
 }
 
 .image-preview {
-    flex: 0 0 60%;
+    flex: 0 0 70%;
     text-align: center;
 }
 
 canvas {
     display: block;
-    max-width: 50%;
+    border-radius: 10px;
+    max-width: 70%;
     margin: 20px auto;
     border: 1px solid #ccc;
 }
 
 .buttons {
     flex: 0 0 20%;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -64,6 +113,7 @@ canvas {
 
 button {
     padding: 10px 20px;
+    border-radius: 5px;
     background-color: #333;
     color: #fff;
     border: none;
@@ -105,35 +155,46 @@ footer a:hover {
 }
 
 
-/* Styling for the file input button */
-.file-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
+/* Dark theme */
+body[data-theme="dark"] {
+    background-color: #222;
+    color: #eee;
 }
 
-#imageUpload {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.file-wrapper span {
-    padding: 10px 20px;
+body[data-theme="dark"] .container {
     background-color: #333;
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
 }
 
-.file-wrapper span:hover {
-    background-color: #555;
-    cursor: pointer;
+body[data-theme="dark"] h1, body[data-theme="dark"] h2 {
+    color: #ddd;
+}
+
+body[data-theme="dark"] blockquote {
+    border-left-color: #888;
+}
+
+body[data-theme="dark"] footer {
+    background-color: #111;
+}
+
+/* Pastel theme */
+body[data-theme="pastel"] {
+    background-color: #e9e3e3;
+    color: #5c5c5c;
+}
+
+body[data-theme="pastel"] .container {
+    background-color: #f7f2f2;
+}
+
+body[data-theme="pastel"] h1, body[data-theme="pastel"] h2 {
+    color: #6a6a6a;
+}
+
+body[data-theme="pastel"] blockquote {
+    border-left-color: #b4a7a7;
+}
+
+body[data-theme="pastel"] footer {
+    background-color: #d3caca;
 }

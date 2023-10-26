@@ -114,6 +114,12 @@ canvas {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
 }
 
+/* Styling for the label which will act as our new file input button */
+#imageUpload + label {
+    /* ... (rest of your existing styles) */
+    padding: 18px 30px;  /* Slightly increased padding for a bigger button */
+}
+
 /* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
     .image-section {
@@ -129,7 +135,7 @@ canvas {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 20px; /* Increased spacing between the input and button */
     }
 
     .buttons label, .buttons select, .buttons input, .buttons button {

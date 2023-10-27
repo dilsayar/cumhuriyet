@@ -18,7 +18,7 @@ Uygulamayı aşağıdaki link üzerinden test edebilirsiniz.
 
 ## Ekran Görüntüleri
 
-![Profil Resmi Örneği](https://dosya.profdil.org/Projects/Cumhuriyet/sample.png)
+<img src="https://dosya.profdil.org/Projects/Cumhuriyet/sample.png" width="300">
 
 
 ## Destek & İyileştirme

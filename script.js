@@ -17,7 +17,7 @@ function drawFrame() {
 frameImage.onload = function() {
     drawFrame(); // Draw the frame once it's loaded
 }
-frameImage.src = '/images/t1.png';
+frameImage.src = '/images/t2.png';
 
 
 frameDropdown.addEventListener('change', function() {

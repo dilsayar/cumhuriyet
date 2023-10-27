@@ -3,6 +3,7 @@
 Bu proje Türkiye Cumhuriyetinin kuruluşunun 100. yılı anısına geliştirildi. 100 uygulamasına istediğiniz bir resminizi yükleyip size özel 100. yıl temalı bir profil resmi oluşturabilirsiniz.
 
 <img src="https://dosya.profdil.org/Projects/Cumhuriyet/t3.png" width="300">
+<img src="https://dosya.profdil.org/Projects/Cumhuriyet/t3.png" width="300">
 
 
 ## İnceleyin & Deneyin

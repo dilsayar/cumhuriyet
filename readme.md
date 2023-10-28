@@ -11,6 +11,10 @@ Uygulamayı aşağıdaki link üzerinden test edebilirsiniz.
 [Cumhuriyet 100 Yaşında Çerçeveli Profil Resmi](https://100.huseyindemirtas.com.tr/ "Cumhuriyet 100 Yaşında Çerçeveli Profil Resmi")
 
 
+## Ekran Görüntüleri
+
+<img src="https://dosya.profdil.org/Projects/Cumhuriyet/sample.png" width="300">
+
 ## Özellikler
 
 - 3 farklı çerçeve teması
@@ -18,9 +22,9 @@ Uygulamayı aşağıdaki link üzerinden test edebilirsiniz.
 - Mobil ve masaüstü tarayıcılarla uyumlu
 
 
-## Ekran Görüntüleri
+## Teknolojiler
 
-<img src="https://dosya.profdil.org/Projects/Cumhuriyet/sample.png" width="300">
+- HTML, CSS, JavaScript
 
 
 ## Destek & İyileştirme

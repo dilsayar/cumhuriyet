@@ -167,7 +167,7 @@ button:hover {
 }
 
 .image-gallery img {
-    max-width: 32%;
+    max-width: 80%;
     border-radius: 10px;
 }
 
@@ -233,4 +233,24 @@ body[data-theme="pastel"] blockquote {
 
 body[data-theme="pastel"] footer {
     background-color: #d3caca;
+}
+
+
+/* styles.css - Accessibility Improvements */
+
+/* Ensure text is legible against the background */
+body[data-theme="dark"] {
+    color: #f1f1f1; /* A lighter color for dark theme */
+}
+
+/* Improve button accessibility */
+button {
+    padding: 15px;
+    font-size: 1rem; /* Make text larger for better readability */
+    outline: none; /* Remove default outline */
+}
+
+button:focus, button:hover {
+    background-color: #555;
+    outline: 2px solid #fff; /* Add custom outline on focus for visibility */
 }

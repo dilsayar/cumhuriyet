@@ -62,17 +62,40 @@ function drawCircularImage(img) {
 
 imageUpload.addEventListener('change', function() {
     if (imageUpload.files[0]) {
+
+        const loadingText = document.getElementById("loading-text")
+        loadingText.innerText = 'Loading image...';
+        
+
         const reader = new FileReader();
         reader.onload = function(event) {
             const img = new Image();
             img.src = event.target.result;
             img.onload = function() {
                 drawUserImage(img);
+                loadingText.innerText = "" // Remove the loading text once the image is loaded
             }
         }
         reader.readAsDataURL(imageUpload.files[0]);
     }
 });
+
+
+userImg.onerror = function() {
+    console.error("Error loading user image");
+    // Implement user feedback here, e.g., show an error message to the user
+};
+
+frameImage.onerror = function() {
+    console.error("Error loading frame image");
+    // Implement user feedback here, e.g., show an error message to the user
+};
+
+reader.onerror = function() {
+    console.error("Error reading the file");
+    // Implement user feedback here, e.g., show an error message to the user
+};
+
 
 function drawUserImage(img) {
     drawFrame();  // Draw the frame first

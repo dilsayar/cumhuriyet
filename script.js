@@ -81,21 +81,6 @@ imageUpload.addEventListener('change', function() {
 });
 
 
-userImg.onerror = function() {
-    console.error("Error loading user image");
-    // Implement user feedback here, e.g., show an error message to the user
-};
-
-frameImage.onerror = function() {
-    console.error("Error loading frame image");
-    // Implement user feedback here, e.g., show an error message to the user
-};
-
-reader.onerror = function() {
-    console.error("Error reading the file");
-    // Implement user feedback here, e.g., show an error message to the user
-};
-
 
 function drawUserImage(img) {
     drawFrame();  // Draw the frame first
